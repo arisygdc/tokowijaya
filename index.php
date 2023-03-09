@@ -33,146 +33,58 @@
   <hr><br>
 
   <!-- Featured -->
-  <section class="featured shadow-sm bg-white p-3 mb-5">
-    <div class="container  text-center">
-      <div class="row">
-        <div class="col">
-          <h2 class="mb-3">Grosir Murah dan Harga Terjangkau</h2>
-          <p>Menyediakan Sembako dan GAS LPG</p>
-        </div>
+  <section class="similar shadow-sm bg-white p-3 mt-5 mb-5">
+    <div class="container">
+      <div class="col">
+        <h4>Produk lain yang mungkin anda suka</h4>
+        <p>Berdasarkan produk yang baru-baru ini anda lihat</p>
       </div>
       <div class="row mb-0">
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
+        <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p1.jpg" class="figure-img img-fluid m-0">
-              <a href="item-1.html" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
+              <img src="img/featured/1.png" class="figure-img img-fluid m-0">
             </div>
-            <figcaption class="figure-caption text-center">
+            <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
-              <p class="my-0" style="font-size: 10px; color:#E18388;"><strike>IDR 550,500</strike></p>
               <p>IDR 260,900</p>
-            </figcaption>
+            </a>
           </figure>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 justify-content-center" style="height: fit-content;">
+        <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p2.jpg" class="figure-img img-fluid m-0">
-              <a href="item-1.html" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
+              <img src="img/featured/2.png" class="figure-img img-fluid m-0">
             </div>
-            <figcaption class="figure-caption text-center">
+            <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
-              <p class="my-0" style="font-size: 10px; color:#E18388;"><strike>IDR 550,500</strike></p>
               <p>IDR 260,900</p>
-            </figcaption>
+            </a>
           </figure>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 justify-content-center" style="height: fit-content;">
+        <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p1.jpg" class="figure-img img-fluid m-0">
-              <a href="item-1.html" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
+              <img src="img/featured/3.png" class="figure-img img-fluid m-0">
             </div>
-            <figcaption class="figure-caption text-center">
+            <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
-              <p class="my-0" style="font-size: 10px; color:#E18388;"><strike>IDR 550,500</strike></p>
               <p>IDR 260,900</p>
-            </figcaption>
+            </a>
           </figure>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 justify-content-center" style="height: fit-content;">
+        <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p2.jpg" class="figure-img img-fluid m-0">
-              <a href="item-1.html" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
+              <img src="img/featured/4.png" class="figure-img img-fluid m-0">
             </div>
-            <figcaption class="figure-caption text-center">
+            <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
-              <p class="my-0" style="font-size: 10px; color:#E18388;"><strike>IDR 550,500</strike></p>
               <p>IDR 260,900</p>
-            </figcaption>
+            </a>
           </figure>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="img/featured/p1.jpg" class="figure-img img-fluid m-0">
-              <a href="item-1.html" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p class="my-0" style="font-size: 10px; color:#E18388;"><strike>IDR 550,500</strike></p>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="img/featured/p2.jpg" class="figure-img img-fluid m-0">
-              <a href="item-1.html" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p class="my-0" style="font-size: 10px; color:#E18388;"><strike>IDR 550,500</strike></p>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="row mb-4">
-        <div class="col text-center">
-          <button type="button" class="btn btn-outline-secondary btn-sm"><a href="category.html"
-              style="text-decoration: none;" class=" text-secondary">Lihat Selengkapnya</a></button>
-        </div>
-      </div>
-
-      <hr>
-
-    
+        <button type="button" class="btn btn-outline-secondary btn-sm mx-auto">Lihat Selengkapnya</button>
     </div>
   </section>
   <!-- End of Featured -->

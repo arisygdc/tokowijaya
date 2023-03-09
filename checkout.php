@@ -137,11 +137,7 @@
             </a>
           </figure>
         </div>
-      <div class="row text-center">
-        <div class="col text-center">
-          <button type="button" class="btn btn-outline-secondary btn-sm">Lihat Selengkapnya</button>
-        </div>
-      </div>
+        <button type="button" class="btn btn-outline-secondary btn-sm mx-auto">Lihat Selengkapnya</button>
     </div>
   </section>
   <!-- End of Similar Products -->
