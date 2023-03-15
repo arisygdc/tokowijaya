@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+@include('toko.header')
 
   <!-- Headline/Hero -->
   <!-- PC Version -->
@@ -22,7 +22,6 @@
 
 
   <!-- End of Headline -->
-
   <br>
   <br>
   <br>
@@ -104,4 +103,4 @@
   </section>
   <!-- End of Bottom Jumbotron -->
 
-  <?php include('footer.php')?>
+@include('toko.footer')
