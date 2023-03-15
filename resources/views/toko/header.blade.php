@@ -7,21 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="{{ asset('css/all.css') }}">
 
   <!-- Google Fonts -->
-  <link rel="stylesheet" href="link href="
-    https://fonts.googleapis.com/css?family=Montserrat:300,400,800|Playfair+Display:400,900&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" href="link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,800|Playfair+Display:400,900&display=swap" rel="stylesheet">
 
   <!-- Master Hover -->
-  <link rel="stylesheet" href="css/hover.css">
+  <link rel="stylesheet" href="{{ asset('css/hover.css') }}">
 
   <!-- Hefa Store Style -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
   <title>Toko Wijaya</title>
 </head>
@@ -48,7 +46,7 @@
           </li>
         </ul>
         <a href="checkout.php">
-          <img src="img/cart.png" width="24" height="24" style="margin-left: 2rem;">
+          <img src="{{ asset('img/cart.png') }}" width="24" height="24" style="margin-left: 2rem;">
         </a>
       </div>
     </div>

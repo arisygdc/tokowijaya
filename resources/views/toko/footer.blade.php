@@ -5,13 +5,13 @@
         <div class="col-4 float-left d-none d-md-block">
           <div class="row">
             <a href="#" class="mr-2 ml-0">
-              <img src="img/footer/tw.png" width="24" height="24">
+              <img src="{{ asset('img/footer/tw.png') }}" width="24" height="24">
             </a>
             <a href="#" class="mr-2">
-              <img src="img/footer/fb.png" width="24" height="24">
+              <img src="{{ asset('img/footer/fb.png') }}" width="24" height="24">
             </a>
             <a href="#" class="mr-2">
-              <img src="img/footer/ig.png" width="24" height="24">
+              <img src="{{ asset('img/footer/ig.png') }}" width="24" height="24">
             </a>
           </div>
 
@@ -49,10 +49,10 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/all.js"></script>
+  <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+  <script src="{{ asset('js/popper.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
+  <script src="{{ asset('js/all.js') }}"></script>
 </body>
 
 </html>

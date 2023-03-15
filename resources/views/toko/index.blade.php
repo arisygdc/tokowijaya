@@ -42,7 +42,7 @@
         <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/1.png" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/1.png') }}" class="figure-img img-fluid m-0">
             </div>
             <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
@@ -53,7 +53,7 @@
         <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/2.png" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/2.png') }}" class="figure-img img-fluid m-0">
             </div>
             <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
@@ -64,7 +64,7 @@
         <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/3.png" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/3.png') }}" class="figure-img img-fluid m-0">
             </div>
             <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
@@ -75,7 +75,7 @@
         <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/4.png" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/4.png') }}" class="figure-img img-fluid m-0">
             </div>
             <a class="figure-caption text-center btn" href="">
               <h5>Nama Produk</h5>
