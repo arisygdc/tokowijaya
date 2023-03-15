@@ -1,5 +1,5 @@
 
-<?php include('header.php')?>
+@include('toko.header')
     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide mb-3" data-ride="carousel">
         <div class="carousel-inner">
@@ -245,4 +245,4 @@
         </div>
     </section>
     <!-- End of Reccomendations -->
-<?php include('footer.php')?>
+@include('toko.footer')
