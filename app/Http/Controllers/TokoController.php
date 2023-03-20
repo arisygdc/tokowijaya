@@ -16,4 +16,5 @@ class TokoController extends Controller
     {
         return view('toko.category');
     }
+
 }

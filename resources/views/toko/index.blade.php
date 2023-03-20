@@ -83,7 +83,7 @@
             </a>
           </figure>
         </div>
-        <button type="button" class="btn btn-outline-secondary btn-sm mx-auto">Lihat Selengkapnya</button>
+        <a href="{{ url('/category') }}" class="btn btn-outline-secondary btn-sm mx-auto">Lihat Selengkapnya</a>
     </div>
   </section>
   <!-- End of Featured -->

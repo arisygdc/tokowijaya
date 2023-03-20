@@ -39,10 +39,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">HOME</a>
+            <a class="nav-link" href="{{ url('/') }}">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="category.php">KATEGORI</a>
+            <a class="nav-link" href="{{ url('/category') }}">KATEGORI</a>
           </li>
         </ul>
         <a href="checkout.php">
