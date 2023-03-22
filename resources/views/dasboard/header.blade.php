@@ -58,21 +58,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="karyawan.php" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="{{ url('/karyawan') }}" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Karyawan</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pelanggan.php" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="{{ url('/karyawan/pelanggan') }}" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Pelanggan</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="transaksi.php" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="{{ url('/karyawan/transaksi') }}" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Transaksi</span>
@@ -111,7 +111,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{ asset('assets/img/undraw_profile.svg') }}">
                             </a>
