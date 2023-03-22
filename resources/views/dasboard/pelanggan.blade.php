@@ -28,16 +28,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($pelanggan as $val)
                                         <tr>
-                                            <td>0001</td>
-                                            <td>120120120120120</td>
-                                            <td>Edinburgh</td>
-                                            <td>Dusun 2</td>
-                                            <td>081208120812</td>
-                                            <td>4/12/1990</td>
-                                            <td>Petani</td>
-                                            <td>P</td>
+                                            <td>{{$val->kode_pengguna}}</td>
+                                            <td>{{$val->nik}}</td>
+                                            <td>{{$val->name}}</td>
+                                            <td>{{$val->alamat}}</td>
+                                            <td>{{$val->telephone}}</td>
+                                            <td>{{$val->tgl_lahir}}</td>
+                                            <td>{{$val->pekerjaan}}</td>
+                                            <td>{{$val->jk}}</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
