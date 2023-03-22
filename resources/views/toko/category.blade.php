@@ -40,7 +40,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/H1.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h4 class="card-title" style="font-weight: 800;">beras</h4>
+                            <h4 class="card-title" style="font-weight: 800;">Sembako</h4>
                         </div>
                         <a href=""></a>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/H1.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h4 class="card-title" style="font-weight: 800;">Minyak</h4>
+                            <h4 class="card-title" style="font-weight: 800;">Snack</h4>
                         </div>
                         <a href=""></a>
                     </div>
@@ -62,7 +62,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/1.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Detergen</h5>
+                            <h5 class="card-title" style="font-weight: 800;">ATK</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/1.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Snack</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Bumbu</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -82,7 +82,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/1.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Rokok</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Minuman</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/6a.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Minuman</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Obat</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -106,7 +106,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/6a.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Mie Instant</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Perlengkap</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/6a.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Gula</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Lainnya</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -126,7 +126,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/6a.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Kerupuk</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Segera</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -136,7 +136,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/6a.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Air Kemasan</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Segera</h5>
                         </div>
                         <a href=""></a>
                     </div>
@@ -146,7 +146,7 @@
                     <div class="card bg-dark text-white banner">
                         <img src="img/category/6a.png" class="card-img rounded">
                         <div class="card-img-overlay d-flex justify-content-between">
-                            <h5 class="card-title" style="font-weight: 800;">Shampoo</h5>
+                            <h5 class="card-title" style="font-weight: 800;">Segera</h5>
                         </div>
                         <a href=""></a>
                     </div>
