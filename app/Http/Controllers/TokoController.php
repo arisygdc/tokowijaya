@@ -17,4 +17,12 @@ class TokoController extends Controller
         return view('toko.category');
     }
 
+    public function items(): View
+    {
+        return view('toko.item');
+    }
+
+    public function keranjang_index(): View {
+        return view('toko.checkout');
+    }
 }
