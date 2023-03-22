@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+@include('toko.header')
 <!-- shopping cart form -->
 <form>
   <div class="row">
@@ -141,4 +141,4 @@
     </div>
   </section>
   <!-- End of Similar Products -->
-  <?php include('footer.php')?>
+  @include('toko.footer')

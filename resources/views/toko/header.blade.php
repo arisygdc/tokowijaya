@@ -45,10 +45,10 @@
             <a class="nav-link" href="{{ url('/category') }}">KATEGORI</a>
           </li>
         </ul>
-        <a href="checkout.php">
+        <a href="{{ url('/keranjang') }}">
           <img src="{{ asset('img/cart.png') }}" width="24" height="24" style="margin-left: 2rem;">
         </a>
-        <a href="{{url('/login')}}"> 
+        <a href="{{url('/login')}}">
           <img height="24" src="https://img.icons8.com/ios-filled/50/FFFFFF/login-rounded-right.png"/>
         </a>
       </div>

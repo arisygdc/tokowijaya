@@ -26,7 +26,7 @@ class AuthController extends Controller
             }
 
             if ($user->level == "Pengguna") {
-                return redirect()->intended('/pengguna');
+                return redirect()->intended('/');
             }
 
             return back()->withErrors([

@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+@include('toko.header')
 <!-- Breadcrumb -->
   <section class="separator">
     <div class="container">
@@ -194,4 +194,4 @@
     </div>
   </section>
   <!-- End of Similar Products -->
-<?php include('footer.php')?>
+  @include('toko.footer')
