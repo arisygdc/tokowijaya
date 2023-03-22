@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,16 +15,6 @@ class UserSeeder extends Seeder
         $level = ["Karyawan", "Pengguna"];
         $jk = ["Pria", "wanita"];
         $pwd = bcrypt("bukaakun");
-// +---------------+------------------+---------------+----------+--------------------------------------------------------------------+--------------+---------------+
-// | kode_karyawan | nik              | nama_karyawan | posisi   | alamat                                                             | telephone    | jenis_kelamin |
-// +---------------+------------------+---------------+----------+--------------------------------------------------------------------+--------------+---------------+
-// |         10001 | 3523180203000006 | Ricky Herlyan | Admin    | Jalan Kedaton Rt.05 Rw.01 Dusun Burdalem  Desa Leran Wetan         | 085764734332 | Pria          |
-// |         10002 | 3523180906740006 | Suliat        | Karyawan | Jalan Kedaton Rt.05 Rw.01 Dusun Burdalem  Desa Leran Wetan         | 089753649273 | Wanita        |
-// |         10003 | 3523181110700001 | Samsi         | Pemilik  | Jalan Kedaton Rt.05 Rw.01 Dusun Burdalem  Desa Leran Wetan         | 082276485467 | Pria          |
-// |         10004 | 3523180607930003 | Farah Fadilah | Karyawan | Jalan Pusri Rt.02 Rw.09 Dusun Kedaton  Desa Leran kulon            | 08768263654  | Wanita        |
-// |         10005 | 3523182106950003 | Joko Suwito   | Kurir    | Jalan Bukit Karang Rt.02 Rw.03 Dusun Karang Dowo  Desa Leran Wetan | 089637927284 | Pria          |
-// |         10006 | 3523182311970001 | Anindi Sari   | Karyawan | Jalan Argopuro Rt.03 Rw.01 Dusun Leran  Desa Leran Kulon           | 085746282584 | Wanita        |
-// +---------------+------------------+---------------+----------+--------------------------------------------------------------------+--------------+---------------+
 
         $karyawan = [
             [
