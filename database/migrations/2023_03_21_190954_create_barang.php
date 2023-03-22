@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
             $table->string('nama_barang');
-            $table->string('satuan');
+            $table->integer('stock');
             $table->string('jenis_barang');
             $table->integer('harga');
         });
