@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('jk');
             $table->string('telephone');
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 

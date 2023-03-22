@@ -30,6 +30,8 @@ Route::middleware([KaryawanRole::class])->group(function() {
     Route::get('/karyawan/transaksi', [KaryawanController::class, 'transaksi']);
     Route::get('/karyawan/barang/insert', [KaryawanController::class, 'insert_barang_index']);
     Route::post('/karyawan/barang/insert', [KaryawanController::class, 'insert_barang']);
+    Route::get('/karyawan/insert', [KaryawanController::class, 'insert_karyawan_index']);
+    Route::post('/karyawan/insert', [KaryawanController::class, 'insert_karyawan']);
 });
 
 Route::name('pengguna.')->group(function() {

@@ -1,37 +1,38 @@
 @include('dasboard.header')
 <div class="container mt-5">
 		<h2>Input Data Karyawan</h2>
-		<form>
-			<div class="form-group">
-				<label for="kode">Kode:</label>
-				<input type="text" class="form-control" id="kode">
+		<form action="{{ url('/karyawan/insert') }}" method="POST">
+            @csrf
+            <div class="form-group">
+				<label for="nik">Kode Karyawan:</label>
+				<input type="text" class="form-control" id="nik" name="kode_karyawan">
 			</div>
 			<div class="form-group">
 				<label for="nik">NIK:</label>
-				<input type="text" class="form-control" id="nik">
+				<input type="text" class="form-control" id="nik" name="nik">
 			</div>
 			<div class="form-group">
 				<label for="nama">Nama:</label>
-				<input type="text" class="form-control" id="nama">
-			</div>
-			<div class="form-group">
-				<label for="posisi">Posisi:</label>
-				<input type="text" class="form-control" id="posisi">
+				<input type="text" class="form-control" id="nama" name="nama"">
 			</div>
 			<div class="form-group">
 				<label for="alamat">Alamat:</label>
-				<textarea class="form-control" id="alamat"></textarea>
-			</div>
-			<div class="form-group">
-				<label for="telp">No Telp:</label>
-				<input type="text" class="form-control" id="telp">
+				<textarea class="form-control" id="alamat" name="alamat"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="jenis_kelamin">Jenis Kelamin:</label>
-				<select class="form-control" id="jenis_kelamin">
+				<select class="form-control" id="jenis_kelamin" name="jk">
 					<option value="laki-laki">Laki-Laki</option>
 					<option value="perempuan">Perempuan</option>
 				</select>
+			</div>
+            <div class="form-group">
+				<label for="nama">Telephone:</label>
+				<input type="text" class="form-control" id="nama" name="telephone"">
+			</div>
+            <div class="form-group">
+				<label for="nama">Password:</label>
+				<input type="password" class="form-control" id="nama" name="password"">
 			</div>
 			<button type="submit" class="btn btn-primary">Simpan</button>
 		</form>

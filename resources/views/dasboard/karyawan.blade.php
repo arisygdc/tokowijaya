@@ -9,7 +9,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                           <div class="btn-group" role="group" aria-label="Basic example">
-                            <a type="button" class="btn btn-primary" href="input_karyawan.php">Tambah Karyawan</a>
+                            <a type="button" class="btn btn-primary" href="{{ url('/karyawan/insert') }}">Tambah Karyawan</a>
                           </div>
                         </div>
                         <div class="card-body">
