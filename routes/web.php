@@ -34,6 +34,6 @@ Route::middleware([KaryawanRole::class])->group(function() {
     Route::post('/karyawan/insert', [KaryawanController::class, 'insert_karyawan']);
 });
 
-Route::name('pengguna.')->group(function() {
-    Route::get('/pengguna', [PenggunaController::class, 'index'])->name('index');
-});
+Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/item', [TokoController::class, 'items']);
+Route::get('/keranjang', [TokoController::class, 'keranjang_index']);

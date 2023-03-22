@@ -42,7 +42,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h4 class="card-title" style="font-weight: 800;">Sembako</h4>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/item') }}"></a>
                     </div>
                 </div>
 
