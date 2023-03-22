@@ -19,13 +19,21 @@
                                         <tr>
                                             <th>Kode</th>
                                             <th>Nama</th>
-                                            <th>Awal</th>
-                                            <th>Sisa</th>
+                                            <th>Stock</th>
                                             <th>Jenis</th>
                                             <th>Harga</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach ($barang as $val)
+                                     <tr>
+                                            <th>{{$val->id}}</th>
+                                            <th>{{$val->nama_barang}}</th>
+                                            <th>{{$val->satuan}}</th>
+                                            <th>{{$val->jenis_barang}}</th>
+                                            <th>{{$val->harga}}</th>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

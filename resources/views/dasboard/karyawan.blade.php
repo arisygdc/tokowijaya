@@ -27,15 +27,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($karyawan as $val)
                                         <tr>
-                                            <td>0001</td>
-                                            <td>190190190190190</td>
-                                            <td>Edinburgh</td>
-                                            <td>Kasir</td>
-                                            <td>Dusun 1</td>
-                                            <td>081212121212</td>
-                                            <td>L</td>
+                                            <td>{{$val->nik}}</td>
+                                            <td>{{$val->nik}}</td>
+                                            <td>{{$val->name}}</td>
+                                            <td>{{$val->level}}</td>
+                                            <td>{{$val->alamat}} 1</td>
+                                            <td>{{$val->telephone}}</td>
+                                            <td>{{$val->jk}}</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
