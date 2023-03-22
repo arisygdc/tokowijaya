@@ -9,7 +9,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                           <div class="btn-group" role="group" aria-label="Basic example">
-                            <a type="button" class="btn btn-primary" href="input_barang.php">Tambah Produk</a>
+                            <a type="button" class="btn btn-primary" href="{{ url('/karyawan/barang/insert') }}">Tambah Produk</a>
                           </div>
                         </div>
                         <div class="card-body">
@@ -29,7 +29,7 @@
                                      <tr>
                                             <th>{{$val->id}}</th>
                                             <th>{{$val->nama_barang}}</th>
-                                            <th>{{$val->satuan}}</th>
+                                            <th>{{$val->stock}}</th>
                                             <th>{{$val->jenis_barang}}</th>
                                             <th>{{$val->harga}}</th>
                                         </tr>
