@@ -48,6 +48,9 @@
         <a href="checkout.php">
           <img src="{{ asset('img/cart.png') }}" width="24" height="24" style="margin-left: 2rem;">
         </a>
+        <a href="">
+          <img height="24" src="https://img.icons8.com/ios-filled/50/FFFFFF/login-rounded-right.png"/>
+        </a>
       </div>
     </div>
   </nav>
