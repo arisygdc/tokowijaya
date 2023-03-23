@@ -4,8 +4,8 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent" style="font-size: 14px;">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Nama Produk</li>
+          <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Nama Kategori</li>
         </ol>
       </nav>
     </div>
@@ -14,51 +14,28 @@
 
   <!-- Content -->
   <section class="item pt-3 bg-white shadow-sm mb-5">
-    <div class="container justify-content-center">
-      <div class="row mx-0">
-        <div class="col-md-4 mt-1" style="max-width:unset;">
-          <div class="row mx-0">
-            <div class="figure-img">
-              <img src="img/single-item/p1.jpg" class="d-block w-100">
-            </div>
-          </div>
+    <div class="container d-flex flex-column">
+        <div class="container text-center">
+          <h1>Nama Kategori</h1>
         </div>
-
-        <div class="col px-3 mt-1">
-          <div class="row mx-0">
-            <h2>Minyak Goreng</h2>
+        <!-- tempat ngerepeat -->
+        <div class="container d-flex flex-row align-items-center">
+          <div class="d-flex">
+            <img src="img/featured/p2.jpg" height="280px" alt="">
           </div>
-          <div class="row mx-0">
-            <h4 class="mr-2 text-secondary">IDR 36,000</h4>
+          <div class="d-flex flex-column text-start">
+            <h4>Nama Barang</h4>
+            <h4>Harga : </h4>
+            <h4>
+              <form action="">
+                <label for="quantity">jumlah :</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="stock">
+                <input type="submit">
+              </form>
+            </h4>
           </div>
-
-          <div class="row mx-0 mt-2 mb-0">
-            <div class="col mx-0">
-              <p class="text-danger mr-2 mb-0" style="font-size: 20px;">Stock &lt; 50</p>
-              <p class="text-danger" style="font-size: 14px; opacity: 0.6;">Segera pesan sebelum kehabisan !</p>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="col-md-3">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button class="btn btn-secondary disabled" type="button">-</button>
-                </div>
-                <input class="form-control text-center" type="number" placeholder="1">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="button">+</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <button type="button" class="btn btn-primary btn-block">Add to cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class="m-0 mt-5 mb-5">
-
+        </div>  
+        <!-- end repeat-->
     </div>
   </section>
   <!-- End of Content -->
