@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,14 +13,15 @@ class TokoController extends Controller
         return view('toko.index');
     }
 
-    public function category(): View
+    public function category_page(): View
     {
         return view('toko.category');
     }
 
-    public function items(): View
+    public function category_items(Request $request, string $category): View
     {
-        return view('toko.item');
+        $barangByCategory = Barang::where('jenis_barang', $category)->get();
+        return view('toko.item')->with(['barangs' => $barangByCategory, 'kategori' => $category]);
     }
 
     public function keranjang_index(): View {

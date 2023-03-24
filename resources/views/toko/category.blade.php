@@ -42,7 +42,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h4 class="card-title" style="font-weight: 800;">Sembako</h4>
                         </div>
-                        <a href="{{ url('/item') }}"></a>
+                        <a href="{{ url('/category/Sembako') }}"></a>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h4 class="card-title" style="font-weight: 800;">Snack</h4>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/category/Snack') }}"></a>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h5 class="card-title" style="font-weight: 800;">ATK</h5>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/category/ATK') }}"></a>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h5 class="card-title" style="font-weight: 800;">Bumbu</h5>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/category/Bumbu') }}"></a>
                     </div>
                 </div>
 
@@ -84,7 +84,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h5 class="card-title" style="font-weight: 800;">Minuman</h5>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/category/Minuman') }}"></a>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h5 class="card-title" style="font-weight: 800;">Obat</h5>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/category/Obat') }}"></a>
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h5 class="card-title" style="font-weight: 800;">Perlengkap</h5>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/category/Perlengkap') }}"></a>
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@
                         <div class="card-img-overlay d-flex justify-content-between">
                             <h5 class="card-title" style="font-weight: 800;">Lainnya</h5>
                         </div>
-                        <a href=""></a>
+                        <a href="{{ url('/category/sembako') }}"></a>
                     </div>
                 </div>
 

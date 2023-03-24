@@ -18,6 +18,10 @@ return new class extends Migration
             $table->unsignedBigInteger('kode_karyawan')->index();
             $table->foreign('kode_karyawan')->references('kode_karyawan')->on('karyawan')->onDelete('cascade');
             $table->date('tanggal');
+            $table->date('alamat')->nullable(true);
+            // jika status == 0
+            // maka transaksi masih ada di keranjang
+            $table->boolean('status');
         });
     }
 

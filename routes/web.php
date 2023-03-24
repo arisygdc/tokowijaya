@@ -18,7 +18,7 @@ use App\Http\Controllers\TokoController;
 */
 
 Route::get('/', [TokoController::class, 'index']);
-Route::get('/category', [TokoController::class, 'category']);
+Route::get('/category', [TokoController::class, 'category_page']);
 Route::get('/login', [AuthController::class, 'index_login']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
@@ -35,5 +35,5 @@ Route::middleware([KaryawanRole::class])->group(function() {
 });
 
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/item', [TokoController::class, 'items']);
+Route::get('/category/{category}', [TokoController::class, 'category_items']);
 Route::get('/keranjang', [TokoController::class, 'keranjang_index']);
