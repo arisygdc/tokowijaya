@@ -35,5 +35,7 @@ Route::middleware([KaryawanRole::class])->group(function() {
 });
 
 Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/keranjang', [TokoController::class, 'keranjang_index']);
+Route::post('/keranjang', [TokoController::class, 'keranjang']);
 Route::get('/category/{category}', [TokoController::class, 'category_items']);
 Route::get('/keranjang', [TokoController::class, 'keranjang_index']);

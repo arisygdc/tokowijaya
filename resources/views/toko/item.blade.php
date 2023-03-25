@@ -29,8 +29,10 @@
             <h4>Stock : {{$barang->stock}}</h4>
             <h4>
               <form action="{{ url('/keranjang') }}" method="POST">
+                @csrf
                 <label for="quantity">jumlah :</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="stock">
+                <input type="hidden" name="barang" value="{{ $barang->id }}">
+                <input type="number" id="quantity" name="quantity" min="1" max="stock" name="qty">
                 <input type="submit">
               </form>
             </h4>
