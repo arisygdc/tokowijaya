@@ -9,20 +9,8 @@
         </div>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-4">
-              <img src="https://via.placeholder.com/200x200" alt="Product" class="img-fluid">
-            </div>
-            <div class="col-md-8">
-              <h5 class="card-title">Nama Produk</h5>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="quantity">Quantity</label>
-                    <input type="number" class="form-control" id="quantity" value="1">
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
           </div>
         </div>
       </div>
@@ -42,14 +30,24 @@
               </tr>
             </thead>
             <tbody>
+            @php
+                $total = 0
+            @endphp
+            @if ($count > 0)
+            @foreach ($keranjang as $ker)
               <tr>
-                <td>Beras</td>
-                <td>1</td>
-                <td>10,000</td>
+                <td>{{ $ker->nama_barang }}</td>
+                <td>{{ $ker->jumlah }}</td>
+                <td>{{ $ker->harga }}</td>
               </tr>
+                @php
+                    $total += $ker->harga
+                @endphp
+            @endforeach
+            @endif
             </tbody>
           </table>
-          <h5 class="card-title">Total: 10,000</h5>
+          <h5 class="card-title">Total: {{ $total }}</h5>
         </div>
       </div>
     </div>
@@ -57,7 +55,8 @@
 </form>
 <div class="container mt-5">
   <h1>Alamat Pengiriman</h1>
-  <form>
+  <form action="{{ url('/checkout') }}" method="post">
+    @csrf
     <div class="row mb-3">
       <label for="inputName" class="col-sm-2 col-form-label">Nama Lengkap</label>
       <div class="col-sm-10">
@@ -67,7 +66,7 @@
     <div class="row mb-3">
       <label for="inputAddress" class="col-sm-2 col-form-label">Alamat</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan alamat lengkap Anda">
+        <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan alamat lengkap Anda" name="alamat">
       </div>
     </div>
     <div class="row mb-3">

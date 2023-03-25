@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kode_karyawan')->index()->nullable(true);
             $table->foreign('kode_karyawan')->references('kode_karyawan')->on('karyawan')->onDelete('cascade');
             $table->boolean('status');
-            $table->date('alamat')->nullable(true);
+            $table->string('alamat')->nullable(true);
             $table->date('tanggal');
             // jika status == 0
             // maka transaksi masih ada di keranjang
