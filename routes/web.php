@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KaryawanController;
-use App\Http\Controllers\PenggunaController;
 use App\Http\Middleware\KaryawanRole;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokoController;

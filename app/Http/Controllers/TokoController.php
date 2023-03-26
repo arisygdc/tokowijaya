@@ -6,7 +6,6 @@ use App\Models\Barang;
 use App\Models\DetTransaksi;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
