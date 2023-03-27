@@ -70,7 +70,7 @@ class KaryawanController extends Controller
 
         $kar_param = new Karyawan;
         $kar_param->kode_karyawan = $request->kode_karyawan;
-        dump($users_param);
+
         if (!$users_param->save()) {
             DB::rollBack();
             return back()->withErrors(['msg' => 'sepertinya terjadi masalah']);
@@ -78,7 +78,7 @@ class KaryawanController extends Controller
 
         $id = $users_param->id;
         $kar_param->user_id = $id;
-        dump($kar_param);
+
         if (!$kar_param->save()) {
             DB::rollBack();
             return back()->withErrors(['msg' => 'sepertinya terjadi masalah']);

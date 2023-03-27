@@ -5,36 +5,40 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent" style="font-size: 14px;">
           <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Nama Kategori</li>
+          <li class="breadcrumb-item active" aria-current="page">{{ $kategori }}</li>
         </ol>
       </nav>
     </div>
   </section>
   <!-- End of Breadcrumb -->
-
   <!-- Content -->
   <section class="item pt-3 bg-white shadow-sm mb-5">
     <div class="container d-flex flex-column">
         <div class="container text-center">
-          <h1>Nama Kategori</h1>
+          <h1>{{ $kategori }}</h1>
         </div>
         <!-- tempat ngerepeat -->
+        @foreach ($barangs as $barang)
         <div class="container d-flex flex-row align-items-center">
           <div class="d-flex">
-            <img src="img/featured/p2.jpg" height="280px" alt="">
+            <img src="{{ asset('img/featured/p2.jpg') }}" height="280px" alt="">
           </div>
           <div class="d-flex flex-column text-start">
-            <h4>Nama Barang</h4>
-            <h4>Harga : </h4>
+            <h4>{{$barang->nama_barang}}</h4>
+            <h4>Harga : {{$barang->harga}}</h4>
+            <h4>Stock : {{$barang->stock}}</h4>
             <h4>
-              <form action="">
+              <form action="{{ url('/keranjang') }}" method="POST">
+                @csrf
                 <label for="quantity">jumlah :</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="stock">
+                <input type="hidden" name="barang" value="{{ $barang->id }}">
+                <input type="number" id="quantity" name="quantity" min="1" max="stock" name="qty">
                 <input type="submit">
               </form>
             </h4>
           </div>
-        </div>  
+        </div>
+        @endforeach
         <!-- end repeat-->
     </div>
   </section>
@@ -51,7 +55,7 @@
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p1.jpg" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/p1.jpg') }}" class="figure-img img-fluid m-0">
               <a href="" class="d-flex justify-content-center">
                 <div class="btn-group align-self-end" role="group" style="width: 100%;">
                   <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
@@ -70,7 +74,7 @@
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p2.jpg" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
               <a href="" class="d-flex justify-content-center">
                 <div class="btn-group align-self-end" role="group" style="width: 100%;">
                   <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
@@ -89,7 +93,7 @@
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p1.jpg" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
               <a href="" class="d-flex justify-content-center">
                 <div class="btn-group align-self-end" role="group" style="width: 100%;">
                   <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
@@ -108,7 +112,7 @@
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p2.jpg" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
               <a href="" class="d-flex justify-content-center">
                 <div class="btn-group align-self-end" role="group" style="width: 100%;">
                   <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
@@ -127,7 +131,7 @@
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p1.jpg" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/p1.jpg') }}" class="figure-img img-fluid m-0">
               <a href="" class="d-flex justify-content-center">
                 <div class="btn-group align-self-end" role="group" style="width: 100%;">
                   <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
@@ -146,7 +150,7 @@
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
-              <img src="img/featured/p2.jpg" class="figure-img img-fluid m-0">
+              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
               <a href="" class="d-flex justify-content-center">
                 <div class="btn-group align-self-end" role="group" style="width: 100%;">
                   <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
