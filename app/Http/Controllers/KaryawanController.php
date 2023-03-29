@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\DetTransaksi;
 use App\Models\Karyawan;
 use App\Models\Pengguna;
 use App\Models\Transaksi;
@@ -10,7 +11,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-// use Illuminate\Support\Facades\Auth;
 
 class KaryawanController extends Controller
 {
@@ -32,8 +32,16 @@ class KaryawanController extends Controller
         return view('dasboard.pelanggan')->with('pelanggan',  $pelanggan);
     }
 
-    public function transaksi(): View
+    public function transaksi_index(Request $request): View
     {
+        if (!is_null($request->get('id'))) {
+            $dt = DetTransaksi::select('barang.nama_barang as barang', 'detail_transaksi.jumlah')
+            ->leftJoin('barang', 'detail_transaksi.kode_barang', '=', 'barang.id')
+            ->where('kode_transaksi', $request->get('id'))
+            ->get();
+            return view('dasboard.detail_transaksi')->with(['transaksi_id' => $request->get('id'), 'detail_transaksi' => $dt]);
+        }
+
         $transaksi = Transaksi::select('transaksi.id', 'users.name', 'transaksi.tanggal')
         ->where('status', 1)
         ->leftJoin('users', 'transaksi.kode_pengguna', '=', 'users.id')
@@ -44,6 +52,18 @@ class KaryawanController extends Controller
 
     public function insert_barang_index(): View {
         return view('dasboard.input_barang');
+    }
+
+    public function kirim_barang(Request $request) {
+        if (is_null($request->get('id'))) {
+            abort(404);
+        }
+
+        $id = $request->get('id');
+        $tt = Transaksi::find($id);
+        $tt->status = 2;
+        $tt->save();
+        return redirect()->intended('/karyawan/transaski');
     }
 
     public function insert_barang(Request $request) {
