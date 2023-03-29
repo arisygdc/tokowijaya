@@ -18,24 +18,18 @@
                                     <thead>
                                         <tr>
                                             <th>Kode</th>
-                                            <th>Kode Barang</th>
                                             <th>Kode Pengguna</th>
-                                            <th>Kode Karyawan</th>
                                             <th>Tanggal</th>
-                                            <th>Jumlah</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- @foreach ($transaksi as $val) -->
+                                        @foreach ($transaksi as $val)
                                         <tr>
-                                            <td>Not Implemented</td>
-                                            <td>Not Implementedt</td>
-                                            <td>Not Implemented</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td>{{ $val->id }}</td>
+                                            <td>{{ $val->name }}</td>
+                                            <td>{{ $val->tanggal }}</td>
                                         </tr>
-                                        <!-- @endforeach -->
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
