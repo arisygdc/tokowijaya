@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use App\Models\Karyawan;
+use App\Models\Pengguna;
 use App\Models\Transaksi;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -13,27 +14,31 @@ use Illuminate\View\View;
 
 class KaryawanController extends Controller
 {
-    public function index(Request $request): View
+    public function index(): View
     {
         $karyawan = DB::table('karyawan')->leftJoin('users', 'karyawan.user_id', '=', 'users.id')->get();
         return view('dasboard.karyawan')->with('karyawan', $karyawan);
     }
 
-    public function barang(Request $request): View
+    public function barang(): View
     {
         $barang = Barang::all();
         return view('dasboard.barang')->with('barang',  $barang);
     }
 
-    public function pelanggan(Request $request): View
+    public function pelanggan(): View
     {
         $pelanggan = DB::table('pengguna')->leftJoin('users', 'pengguna.kode_pengguna', '=', 'users.id')->get();
         return view('dasboard.pelanggan')->with('pelanggan',  $pelanggan);
     }
 
-    public function transaksi(Request $request): View
+    public function transaksi(): View
     {
-        $transaksi = Transaksi::all();
+        $transaksi = Transaksi::select('transaksi.id', 'users.name', 'transaksi.tanggal')
+        ->where('status', 1)
+        ->leftJoin('users', 'transaksi.kode_pengguna', '=', 'users.id')
+        ->get();
+
         return view('dasboard.transaksi')->with('transaksi',  $transaksi);
     }
 
@@ -55,6 +60,10 @@ class KaryawanController extends Controller
 
     public function insert_karyawan_index(): View {
         return view('dasboard.input_karyawan');
+    }
+
+    public function insertPelanggan_index(): View {
+        return view('dasboard.input_pelanggan');
     }
 
     public function insert_karyawan(Request $request) {
@@ -80,6 +89,37 @@ class KaryawanController extends Controller
         $kar_param->user_id = $id;
 
         if (!$kar_param->save()) {
+            DB::rollBack();
+            return back()->withErrors(['msg' => 'sepertinya terjadi masalah']);
+        }
+
+        DB::commit();
+        return redirect()->intended('/karyawan/insert');
+    }
+
+    public function insertPelanggan(Request $request) {
+        DB::beginTransaction();
+        $users_param = new User;
+        $users_param->nik = $request->nik;
+        $users_param->name = $request->nama;
+        $users_param->level = "Pengguna";
+        $users_param->alamat = $request->alamat;
+        $users_param->jk = $request->jk;
+        $users_param->telephone = $request->telephone;
+        $users_param->password = bcrypt($request->password);
+
+        
+        if (!$users_param->save()) {
+            DB::rollBack();
+            return back()->withErrors(['msg' => 'sepertinya terjadi masalah']);
+        }
+        
+        $peng_param = new Pengguna();
+        $peng_param->kode_pengguna = $users_param->id;
+        $peng_param->tgl_lahir = $request->tgl_lahir;
+        $peng_param->pekerjaan = $request->pekerjaan;
+
+        if (!$peng_param->save()) {
             DB::rollBack();
             return back()->withErrors(['msg' => 'sepertinya terjadi masalah']);
         }

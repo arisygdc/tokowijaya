@@ -26,6 +26,8 @@ Route::middleware([KaryawanRole::class])->group(function() {
     Route::get('/karyawan', [KaryawanController::class, 'index']);
     Route::get('/karyawan/barang', [KaryawanController::class, 'barang']);
     Route::get('/karyawan/pelanggan', [KaryawanController::class, 'pelanggan']);
+    Route::get('/karyawan/pelanggan/insert', [KaryawanController::class, 'insertPelanggan_index']);
+    Route::post('/karyawan/pelanggan/insert', [KaryawanController::class, 'insertPelanggan']);
     Route::get('/karyawan/transaksi', [KaryawanController::class, 'transaksi']);
     Route::get('/karyawan/barang/insert', [KaryawanController::class, 'insert_barang_index']);
     Route::post('/karyawan/barang/insert', [KaryawanController::class, 'insert_barang']);
