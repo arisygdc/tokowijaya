@@ -41,7 +41,7 @@
                 <td>{{ $ker->harga }}</td>
               </tr>
                 @php
-                    $total += $ker->harga
+                    $total += ($ker->harga * $ker->jumlah)
                 @endphp
             @endforeach
             @endif

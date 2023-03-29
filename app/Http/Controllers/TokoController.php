@@ -29,7 +29,7 @@ class TokoController extends Controller
     }
 
     public function keranjang_index(): View {
-        if (Auth::user() == null) {
+        if (is_null(Auth::user())) {
             abort(403);
         }
 
@@ -49,8 +49,8 @@ class TokoController extends Controller
     }
 
     public function keranjang(Request $request) {
-        if (Auth::user() == null) {
-            redirect()->intended('/404');
+        if (is_null(Auth::user())) {
+            abort(403);
         }
 
         $id = Auth::user()->id;
@@ -74,8 +74,8 @@ class TokoController extends Controller
     }
 
     public function checkout(Request $request) {
-        if (Auth::user() == null) {
-            redirect()->intended('/404');
+        if (is_null(Auth::user())) {
+            abort(403);
         }
 
         if (strlen($request->alamat) < 10) {
