@@ -24,7 +24,7 @@ class TransaksiSeeder extends Seeder
             for ($f=0; $f < rand(30, 50); $f++) {
                 $ker = new Transaksi;
                 $ker->kode_pengguna = $user[rand(0, $usrLen)]->id;
-                $ker->status = 0;
+                $ker->status = 1;
                 $ker->tanggal = $tgl[$i];
                 $ker->alamat = $user[rand(0, $usrLen)]->alamat;
                 $ker->save();

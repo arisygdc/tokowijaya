@@ -9,4 +9,5 @@ class Pengguna extends Model
 {
     use HasFactory;
     protected $table = 'pengguna';
+    public $timestamps = false;
 }

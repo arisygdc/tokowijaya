@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KaryawanController;
-use App\Http\Controllers\PenggunaController;
 use App\Http\Middleware\KaryawanRole;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokoController;
@@ -27,7 +26,10 @@ Route::middleware([KaryawanRole::class])->group(function() {
     Route::get('/karyawan', [KaryawanController::class, 'index']);
     Route::get('/karyawan/barang', [KaryawanController::class, 'barang']);
     Route::get('/karyawan/pelanggan', [KaryawanController::class, 'pelanggan']);
-    Route::get('/karyawan/transaksi', [KaryawanController::class, 'transaksi']);
+    Route::get('/karyawan/pelanggan/insert', [KaryawanController::class, 'insertPelanggan_index']);
+    Route::post('/karyawan/pelanggan/insert', [KaryawanController::class, 'insertPelanggan']);
+    Route::get('/karyawan/transaski', [KaryawanController::class, 'transaksi_index']);
+    Route::post('/karyawan/kirim', [KaryawanController::class, 'kirim_barang']);
     Route::get('/karyawan/barang/insert', [KaryawanController::class, 'insert_barang_index']);
     Route::post('/karyawan/barang/insert', [KaryawanController::class, 'insert_barang']);
     Route::get('/karyawan/insert', [KaryawanController::class, 'insert_karyawan_index']);
