@@ -39,51 +39,21 @@
         <p>Berdasarkan produk yang baru-baru ini anda lihat</p>
       </div>
       <div class="row mb-0">
+        @foreach ($b as $a)
         <div class="col-3 justify-content-center" style="height: fit-content;">
           <figure class="figure">
             <div class="figure-img m-0">
               <img src="{{ asset('img/featured/1.png') }}" class="figure-img img-fluid m-0">
             </div>
             <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
+              <h5>{{ $a->nama_barang }}</h5>
+              <p>{{ $a->harga }}</p>
             </a>
           </figure>
         </div>
-        <div class="col-3 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/2.png') }}" class="figure-img img-fluid m-0">
-            </div>
-            <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </a>
-          </figure>
-        </div>
-        <div class="col-3 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/3.png') }}" class="figure-img img-fluid m-0">
-            </div>
-            <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </a>
-          </figure>
-        </div>
-        <div class="col-3 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/4.png') }}" class="figure-img img-fluid m-0">
-            </div>
-            <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </a>
-          </figure>
-        </div>
-        <a href="{{ url('/category') }}" class="btn btn-outline-secondary btn-sm mx-auto">Lihat Selengkapnya</a>
+        @endforeach
+        
+        <!-- <a href="{{ url('/category') }}" class="btn btn-outline-secondary btn-sm mx-auto">Lihat Selengkapnya</a> -->
     </div>
   </section>
   <!-- End of Featured -->
