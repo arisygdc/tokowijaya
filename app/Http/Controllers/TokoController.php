@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use App\Models\DetTransaksi;
+use App\Models\Pengguna;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -14,7 +15,22 @@ class TokoController extends Controller
 {
     public function index(): View
     {
-        return view('toko.index');
+        $b = Barang::limit(2)->get();
+
+        if (is_null(Auth::user())) {
+            return view('toko.index', ['b' => $b]);
+        }
+
+        $pengguna = Pengguna::where('kode_pengguna', Auth::user()->id)->first();
+        $first = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
+        ->where('pekerjaan', $pengguna->pekerjaan)
+        ->first();
+        $d = explode('-', $pengguna->tgl_lahir);
+        $c = (int)date("Y") - (int)$d[0];
+        $last = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
+        ->where('usia', $c)
+        ->first();
+        return view('toko.index', ['b' => [$first, $last]]);
     }
 
     public function category_page(): View
