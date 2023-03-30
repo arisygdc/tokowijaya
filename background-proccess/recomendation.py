@@ -1,33 +1,56 @@
 from sklearn.cluster import KMeans
-import sys
+import time
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from mysql_conn import *
 from helper import *
-from matplotlib import style
-style.use("ggplot")
 
+# waktu delay untuk melakukan eksekusi background task
+# satuan detik
+delay_time = 10
 
-def km1(clusterLabel, x_array):
+# eksekusi kmeans
+def km1(clusterLabel, array):
+    dataframe = pd.DataFrame(array, columns=clusterLabel)
+    dataframe_x = dataframe.iloc[:, 0:3]
+    
     kmeans = KMeans(n_clusters=5, random_state=37, n_init='auto')
-    kmeans.fit(x_array)
-    clusterLabel = kmeans.labels_
+    array_x = np.array(dataframe_x)
+    kmeans.fit(array_x)
+    dataframe['cluster'] = kmeans.labels_
+
+    topId = dataframe.groupby(clusterLabel[0])[clusterLabel[1]].apply(lambda x: x.value_counts().index[0]).reset_index(name=clusterLabel[1])
+    return topId.values.tolist()
 
 
-    from sklearn.metrics import confusion_matrix,classification_report
-    print(confusion_matrix(clusterLabel,kmeans.labels_))
-    print(classification_report(clusterLabel,kmeans.labels_))
 
-pek = getPekerjaan()
-rekomendasipek_x = x_merge(penjualanByPekerjaan(), pek)
-clusterLabel = ['pekerjaan', 'barang', 'jumlah']
-x_array = np.array(rekomendasipek_x)
+while True:
+    # group by pekerjaan
+    pek = getPekerjaan()
+    rekomendasipek = x_merge(penjualanByPekerjaan(), pek)
+    clusterLabel = ['pekerjaan', 'barang', 'jumlah']
 
-km1(clusterLabel, x_array)
+    topId = km1(clusterLabel, rekomendasipek)
+    for val in topId:
+        time.sleep(0.1)
+        if len(getPekerjaanName(name=pek[val[0]])) < 1:
+            insertRekomendasiPekerjaan(group=pek[val[0]], barang=val[1])
+            continue
+        update("pekerjaan", pek[val[0]], val[1])
+        
 
-rekomendasiUs_x = penjualanByUsia()
-clusterLabel = ['usia', 'barang', 'jumlah']
-x_array = np.array(rekomendasiUs_x)
+    time.sleep(delay_time)
 
-km1(clusterLabel, x_array)
+    # group by usia
+    rekomendasiUs = penjualanByUsia()
+    clusterLabel = ['usia', 'barang', 'jumlah']
+
+    topId = km1(clusterLabel, rekomendasiUs)
+    for val in topId:
+        time.sleep(0.1)
+        if len(getUsia(usia=val[0])) < 1:
+            insertRekomendasiUsia(group=val[0], barang=val[1])
+            continue
+        update("usia", val[0], val[1])
+
+    time.sleep(delay_time)

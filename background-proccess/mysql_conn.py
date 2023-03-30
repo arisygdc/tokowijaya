@@ -29,15 +29,43 @@ def getPekerjaan():
     db.close()
     return pek
 
-def InsertRekomendasi():
+def getPekerjaanName(name):
+    db = getConn()
+    cursor = db.cursor()
+    # read data
+    sql = f"select * from recomendation where pekerjaan = '{name}'"
+    cursor.execute(sql)
+    pek = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return pek
+
+def getUsia(usia):
+    db = getConn()
+    cursor = db.cursor()
+    # read data
+    sql = f"select * from recomendation where usia = {usia}"
+    cursor.execute(sql)
+    us = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return us
+
+def insertRekomendasiPekerjaan(group, barang):
+    insertRekomendasi("pekerjaan", group, barang)
+
+def insertRekomendasiUsia(group, barang):
+    insertRekomendasi("usia", group, barang)
+
+def insertRekomendasi(field, group, barang):
     # insert data
     db = getConn()
     cursor = db.cursor()
-    sql = "INSERT INTO customers (name, email) VALUES (%s, %s)"
-    values = ("John Doe", "johndoe@example.com")
+    sql = "INSERT INTO recomendation (" + field
+    sql = sql + ", kode_barang) VALUES (%s, %s)"
+    values = (group, barang)
     cursor.execute(sql, values)
     db.commit()
-    print(cursor.rowcount, "record inserted.")
     cursor.close()
     db.close()
 
@@ -81,22 +109,12 @@ def penjualanByUsia():
     db.close()
     return results
 
-def update():
+def update(field, where, barang):
     db = getConn()
     cursor = db.cursor()
         # update data
-    sql = "UPDATE customers SET email = %s WHERE name = %s"
-    values = ("johndoe@gmail.com", "John Doe")
+    sql = f"UPDATE recomendation SET kode_barang = %s WHERE {field} = %s"
+    values = (barang, where)
     cursor.execute(sql, values)
     db.commit()
     print(cursor.rowcount, "record updated.")
-
-def delete():
-    db = getConn()
-    cursor = db.cursor()
-    # delete data
-    sql = "DELETE FROM customers WHERE name = %s"
-    values = ("John Doe",)
-    cursor.execute(sql, values)
-    db.commit()
-    print(cursor.rowcount, "record deleted.")
