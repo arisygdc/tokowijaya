@@ -10,6 +10,7 @@ use App\Models\Transaksi;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class KaryawanController extends Controller
@@ -33,7 +34,7 @@ class KaryawanController extends Controller
     }
 
     public function transaksi_index(Request $request): View
-    {
+    {;
         if (!is_null($request->get('id'))) {
             $dt = DetTransaksi::select('barang.nama_barang as barang', 'detail_transaksi.jumlah')
             ->leftJoin('barang', 'detail_transaksi.kode_barang', '=', 'barang.id')
@@ -63,7 +64,7 @@ class KaryawanController extends Controller
         $tt = Transaksi::find($id);
         $tt->status = 2;
         $tt->save();
-        return redirect()->intended('/karyawan/transaski');
+        return redirect()->intended('/karyawan/transaksi');
     }
 
     public function insert_barang(Request $request) {

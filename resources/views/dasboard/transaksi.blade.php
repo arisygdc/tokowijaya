@@ -25,7 +25,7 @@
                                     <tbody>
                                         @foreach ($transaksi as $val)
                                         <tr>
-                                            <td><a href="{{ url('/karyawan/transaski?id='.$val->id) }}">{{ $val->id }}</a></td>
+                                            <td><a href="{{ url('/karyawan/transaksi?id='.$val->id) }}">{{ $val->id }}</a></td>
                                             <td>{{ $val->name }}</td>
                                             <td>{{ $val->tanggal }}</td>
                                         </tr>
