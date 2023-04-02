@@ -19,23 +19,42 @@
         </div>
         <!-- tempat ngerepeat -->
         @foreach ($barangs as $barang)
-        <div class="container d-flex flex-row align-items-center">
+        <div class="container d-flex flex-row align-items-center justify-content-center">
           <div class="d-flex">
             <img src="{{ asset('img/featured/p2.jpg') }}" height="280px" alt="">
           </div>
           <div class="d-flex flex-column text-start">
-            <h4>{{$barang->nama_barang}}</h4>
-            <h4>Harga : {{$barang->harga}}</h4>
-            <h4>Stock : {{$barang->stock}}</h4>
-            <h4>
-              <form action="{{ url('/keranjang') }}" method="POST">
-                @csrf
-                <label for="quantity">jumlah :</label>
-                <input type="hidden" name="barang" value="{{ $barang->id }}">
-                <input type="number" id="quantity" name="quantity" min="1" max="stock" name="qty">
-                <input type="submit">
-              </form>
-            </h4>
+            <table>
+              <tr>
+                <td><h4>Nama</h4></td>
+                <td><h4>: {{$barang->nama_barang}}</h4></td>
+              </tr>
+              <tr>
+                <td><h4>Harga</h4></td>
+                <td><h4>: {{$barang->harga}}</h4></td>
+              </tr>
+              <tr>
+                <td><h4>Stock</h4></td>
+                <td><h4>: {{$barang->stock}}</h4></td>
+              </tr>
+              <tr>
+                <td><h4>Masukkan Jumlah</h4></td>
+                <td>
+                  <h4>
+                  <form action="{{ url('/keranjang') }}" method="POST">
+                    @csrf
+                    <label for="quantity"><h4>:</h4></label>
+                    <input type="hidden" name="barang" class="form-control mr-sm-2" value="{{ $barang->id }}">
+                    <input type="number" id="quantity" name="quantity" min="1" max="stock" name="qty">
+                    <input type="submit" class="btn btn-primary">
+                  </form>
+                </h4>
+                </td>
+              </tr>
+            </table>
+
+            
+
           </div>
         </div>
         @endforeach
@@ -43,136 +62,4 @@
     </div>
   </section>
   <!-- End of Content -->
-
-  <!-- Similar Products -->
-  <section class="similar shadow-sm bg-white p-3 pt-4 mb-5">
-    <div class="container">
-      <div class="col">
-        <h4>Produk lain yang mungkin anda suka</h4>
-        <p>Berdasarkan produk yang baru-baru ini anda lihat</p>
-      </div>
-      <div class="row mx-0 mb-0 justify-content-center">
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/p1.jpg') }}" class="figure-img img-fluid m-0">
-              <a href="" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
-              <a href="" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
-              <a href="" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
-              <a href="" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/p1.jpg') }}" class="figure-img img-fluid m-0">
-              <a href="" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="{{ asset('img/featured/p2.jpg') }}" class="figure-img img-fluid m-0">
-              <a href="" class="d-flex justify-content-center">
-                <div class="btn-group align-self-end" role="group" style="width: 100%;">
-                  <button type="button" class="btn btn-danger"><img src="img/featured/Mask Group 11.png"
-                      class="mx-auto"></button>
-                  <button type="button" class="btn btn-success"><img src="img/featured/Mask Group 10.png"
-                      class="mx-auto"></button>
-                </div>
-              </a>
-            </div>
-            <figcaption class="figure-caption text-center">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="row mb-4">
-        <div class="col text-center">
-          <button type="button" class="btn btn-outline-secondary btn-sm">Lihat Selengkapnya</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End of Similar Products -->
   @include('toko.footer')

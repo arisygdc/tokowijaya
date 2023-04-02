@@ -34,15 +34,15 @@
   <!-- Featured -->
   <section class="similar shadow-sm bg-white p-3 mt-5 mb-5">
     <div class="container">
-      <div class="col">
+      <div class="col text-center">
         <h4>Produk lain yang mungkin anda suka</h4>
         <p>Berdasarkan produk yang baru-baru ini anda lihat</p>
       </div>
       <div class="row mb-0">
         @foreach ($b as $a)
-        <div class="col-3 justify-content-center" style="height: fit-content;">
+        <div class="col-6 d-flex flex-row justify-content-center" style="height: fit-content;">
           <figure class="figure">
-            <div class="figure-img m-0">
+            <div class="figure-img">
               <img src="{{ asset('img/featured/1.png') }}" class="figure-img img-fluid m-0">
             </div>
             <a class="figure-caption text-center btn" href="">
@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="row mx-0 mt-3 d-flex justify-content-center">
-        <button type="button" class="btn btn-outline-secondary btn-lg">BELANJA SEKARANG</button>
+        <a href="/category" type="button" class="btn btn-outline-secondary btn-lg">BELANJA SEKARANG</a>
       </div>
     </div>
   </section>

@@ -166,81 +166,19 @@
                 </div>
             </div>
             <div class="card-deck mb-4">
-                <div class="card">
-                    <div class="banner">
-                        <img src="img/category/p1.png" class="card-img-top" alt="...">
-                        <a href=""></a>
+                @foreach ($b as $a)
+                <div class="col-6 d-flex flex-row justify-content-center" style="height: fit-content;">
+                <figure class="figure">
+                    <div class="figure-img">
+                    <img src="{{ asset('img/featured/1.png') }}" class="figure-img img-fluid m-0">
                     </div>
-                    <div class="card-body  text-center">
-                        <h5 class="card-title">Nama Produk</h5>
-                        <p class="card-subtitle" style="opacity: 0.5;">IDR 260,500</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-sm text-light"
-                            style="font-size: 10px; background-color: #7F9427;">Beras</button>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-primary btn-block">Add to cart</button>
-                    </div>
+                    <a class="figure-caption text-center btn" href="">
+                    <h5>{{ $a->nama_barang }}</h5>
+                    <p>{{ $a->harga }}</p>
+                    </a>
+                </figure>
                 </div>
-                <div class="card">
-                    <div class="banner">
-                        <img src="img/category/p2.png" class="card-img-top" alt="...">
-                        <a href=""></a>
-                    </div>
-                    <div class="card-body  text-center">
-                        <h5 class="card-title">Nama Produk</h5>
-                        <p class="card-subtitle" style="opacity: 0.5;">IDR 260,500</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-sm text-light"
-                            style="font-size: 10px; background-color: #FF787C;">Minyak Goreng</button>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-primary btn-block">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card shadow-sm">
-                    <div class="banner">
-                        <img src="img/category/p3.png" class="card-img-top" alt="...">
-                        <a href=""></a>
-                    </div>
-                    <div class="card-body  text-center">
-                        <h5 class="card-title">Nama Produk</h5>
-                        <p class="card-subtitle" style="opacity: 0.5;">IDR 260,500</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-sm text-light"
-                            style="font-size: 10px; background-color: #ff78f6;">Snack</button>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-primary btn-block">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="banner">
-                        <img src="img/category/p4.png" class="card-img-top" alt="...">
-                        <a href=""></a>
-                    </div>
-                    <div class="card-body  text-center">
-                        <h5 class="card-title">Nama Produk</h5>
-                        <p class="card-subtitle" style="opacity: 0.5;">IDR 260,500</p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-sm text-light"
-                            style="font-size: 10px; background-color: #834bcc;">Minuman</button>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-primary btn-block">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <hr>
-
-            <div class="row mx-0">
-                <div class="col mb-3 text-center">
-                    <button type="button" class="btn btn-outline-secondary btn-sm">Tampilkan lebih banyak</button>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

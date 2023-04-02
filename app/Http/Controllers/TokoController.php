@@ -18,7 +18,7 @@ class TokoController extends Controller
         $b = Barang::limit(2)->get();
 
         if (is_null(Auth::user())) {
-            return view('toko.index', ['b' => $b]);
+            return view('toko.index', ['b' => $b]);            
         }
 
         $pengguna = Pengguna::where('kode_pengguna', Auth::user()->id)->first();
@@ -35,7 +35,22 @@ class TokoController extends Controller
 
     public function category_page(): View
     {
-        return view('toko.category');
+        $b = Barang::limit(2)->get();
+
+        if (is_null(Auth::user())) {
+            return view('toko.category', ['b' => $b]);            
+        }
+
+        $pengguna = Pengguna::where('kode_pengguna', Auth::user()->id)->first();
+        $first = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
+        ->where('pekerjaan', $pengguna->pekerjaan)
+        ->first();
+        $d = explode('-', $pengguna->tgl_lahir);
+        $c = (int)date("Y") - (int)$d[0];
+        $last = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
+        ->where('usia', $c)
+        ->first();
+        return view('toko.category', ['b' => [$first, $last]]);
     }
 
     public function category_items(Request $request, string $category): View
