@@ -6,15 +6,15 @@ class Querier:
             host="127.0.0.1",
             user="root",
             password="root-secret",
-            database="tokowijaya"
+            database="tokowijaya",
+            autocommit=True
         )
 
     def execute(self, sql):
         cursor = self.db.cursor()
         cursor.execute(sql)
-        self.db.commit()
         return cursor
-
+    
     def getPekerjaan(self):
         cursor = self.execute("select pekerjaan from pengguna group by pekerjaan")
         pek = []
@@ -43,7 +43,6 @@ class Querier:
         cursor = self.db.cursor()
         values = (group, barang)
         cursor.execute(sql, values)
-        self.db.commit()
         cursor.close()
 
     def insertRekomendasiPekerjaan(self, group, barang):
@@ -70,12 +69,11 @@ class Querier:
     
     def penjualanByUsia(self):
         sql = """
-        SELECT p.usia as usia, dt.kode_barang as barang, dt.jumlah
-        FROM detail_transaksi dt inner join transaksi t on dt.kode_transaksi = t.id 
+        SELECT  YEAR(now()) - YEAR(p.tgl_lahir) as old, dt.kode_barang as barang, dt.jumlah
+        FROM detail_transaksi dt inner join transaksi t on dt.kode_transaksi = t.id
         left join pengguna p on p.kode_pengguna = t.kode_pengguna where t.id > 0
         """
-        cursor = self.cursor()
-        cursor.execute(sql)
+        cursor = self.execute(sql)
         results = extractCursor(cursor)
         cursor.close()
         return results
@@ -97,6 +95,17 @@ class Querier:
         sql = f"update recomendation set kode_barang = '{barang}' where {field} = '{group}'"
         cursor = self.execute(sql)
         cursor.close()
+    
+    def barangJumlahTerjual(self):
+        sql = """
+            SELECT b.id, b.stock, dt.terjual FROM 
+            (SELECT kode_barang, count(jumlah) as terjual FROM detail_transaksi GROUP BY kode_barang) as dt
+            LEFT JOIN barang b ON dt.kode_barang = b.id
+        """
+        cursor = self.execute(sql)
+        results = extractCursor(cursor)
+        cursor.close()
+        return results
 
 def extractCursor(cursor):
     results = []
