@@ -106,6 +106,16 @@ class Querier:
         results = extractCursor(cursor)
         cursor.close()
         return results
+    
+    # insertRekomendasiRestock @kode_barang list @cluster int
+    def insertRekomendasiRestock(self, cluster, kode_barang):
+        # loop kode_barang
+        for val in kode_barang:
+            cursor = self.db.cursor()
+            sql = "INSERT INTO restock_pred (kode_barang, cluster) VALUES (%s, %s)"
+            values = (val, cluster)
+            cursor.execute(sql, values)
+            cursor.close()
 
 def extractCursor(cursor):
     results = []
