@@ -2,11 +2,10 @@
 <!-- shopping cart form -->
 <form>
   <div class="row text-center">
-    <h1>Keranjang Belanja</h1>
     <div class="col justify-content-center">
       <div class="card">
         <div class="card-header">
-          <h4>Ringkasan</h4>
+          <h4>Ringkasan Belanja</h4>
         </div>
         <div class="card-body">
           <table class="table">
