@@ -25,6 +25,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::middleware([KaryawanRole::class])->group(function() {
     Route::get('/index', [KaryawanController::class, 'index']);
     Route::get('/karyawan', [KaryawanController::class, 'karyawan']);
+    Route::get('/karyawan/restock/prediction', [KaryawanController::class, 'runPrediction']);
     Route::get('/karyawan/barang', [KaryawanController::class, 'barang']);
     Route::get('/karyawan/pelanggan', [KaryawanController::class, 'pelanggan']);
     Route::get('/karyawan/pelanggan/insert', [KaryawanController::class, 'insertPelanggan_index']);
