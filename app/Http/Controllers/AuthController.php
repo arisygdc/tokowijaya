@@ -21,7 +21,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             if ($user->level == "Karyawan") {
-                return redirect()->intended('/karyawan');
+                return redirect()->intended('/index');
             }
 
             if ($user->level == "Pengguna") {

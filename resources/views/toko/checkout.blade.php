@@ -2,20 +2,14 @@
 <!-- shopping cart form -->
 <form>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col">
       <div class="card">
         <div class="card-header">
           <h4>Keranjang Belanja</h4>
         </div>
-        <div class="card-body">
-          <div class="row">
-
-
-          </div>
-        </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col">
       <div class="card">
         <div class="card-header">
           <h4>Ringkasan</h4>
@@ -83,61 +77,4 @@
   </form>
 </div>
 <!-- end shopping cart form -->
-
-  <!-- Similar Products -->
-  <section class="similar shadow-sm bg-white p-3 mt-5 mb-5">
-    <div class="container">
-      <div class="col">
-        <h4>Produk lain yang mungkin anda suka</h4>
-        <p>Berdasarkan produk yang baru-baru ini anda lihat</p>
-      </div>
-      <div class="row mb-0">
-        <div class="col-3 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="img/featured/1.png" class="figure-img img-fluid m-0">
-            </div>
-            <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </a>
-          </figure>
-        </div>
-        <div class="col-3 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="img/featured/2.png" class="figure-img img-fluid m-0">
-            </div>
-            <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </a>
-          </figure>
-        </div>
-        <div class="col-3 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="img/featured/3.png" class="figure-img img-fluid m-0">
-            </div>
-            <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </a>
-          </figure>
-        </div>
-        <div class="col-3 justify-content-center" style="height: fit-content;">
-          <figure class="figure">
-            <div class="figure-img m-0">
-              <img src="img/featured/4.png" class="figure-img img-fluid m-0">
-            </div>
-            <a class="figure-caption text-center btn" href="">
-              <h5>Nama Produk</h5>
-              <p>IDR 260,900</p>
-            </a>
-          </figure>
-        </div>
-        <button type="button" class="btn btn-outline-secondary btn-sm mx-auto">Lihat Selengkapnya</button>
-    </div>
-  </section>
-  <!-- End of Similar Products -->
   @include('toko.footer')

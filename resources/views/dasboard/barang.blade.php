@@ -22,6 +22,8 @@
                                             <th>Stock</th>
                                             <th>Jenis</th>
                                             <th>Harga</th>
+                                            <th>Gambar</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -32,6 +34,7 @@
                                             <th>{{$val->stock}}</th>
                                             <th>{{$val->jenis_barang}}</th>
                                             <th>{{$val->harga}}</th>
+                                            <th>{{$val->gambar}}</th>
                                         </tr>
                                     @endforeach
                                     </tbody>

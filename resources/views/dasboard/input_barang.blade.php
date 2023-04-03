@@ -31,6 +31,10 @@
       <label for="harga" class="form-label">Harga</label>
       <input type="number" class="form-control" id="harga" name="harga" placeholder="Masukkan Harga Produk">
     </div>
+    <div class="mb-3">
+      <label for="gambar" class="form-label">Link Produk</label>
+      <input type="text" class="form-control" id="gambar" name="gambar" placeholder="Masukkan Link Gambar Produk">
+    </div>
     <button type="submit" class="btn btn-primary">Simpan</button>
   </form>
 </div>

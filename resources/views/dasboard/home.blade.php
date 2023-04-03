@@ -2,21 +2,29 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
-                     <!-- Bar Chart -->
-                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-bar">
-                                <canvas id="myBarChart"></canvas>
-                            </div>
-                            <hr>
-                            Styling for the bar chart can be found in the
-                            <code>/js/demo/chart-bar-demo.js</code> file.
-                        </div>
-                    </div>
+                    <h1 class="h3 mb-4 text-gray-800">Rekomendasi Restock Barang</h1>
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Stock Saat ini</th>
+                            <th>Rekomendasi Untuk Dibeli</th>
+                        </tr>
+                        @foreach ($barang as $val)
+                        <tr>
+                            <th>{{$val->id}}</th>
+                            <th>{{$val->nama_barang}}</th>
+                            <th>{{$val->stock}}</th>
+                            <th></th> 
+                            <!-- rencana jumlah stocknya cluster 0 restocknya 1.2x
+                            rencana jumlah stocknya cluster 1 restocknya 1x
+                            rencana jumlah stocknya cluster 2 restocknya 0.8x
+                            rencana jumlah stocknya cluster 3 restocknya 0.5x -->
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    </table>
 
                 </div>
                 <!-- /.container-fluid -->

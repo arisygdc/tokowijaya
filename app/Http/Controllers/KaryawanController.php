@@ -17,6 +17,11 @@ class KaryawanController extends Controller
 {
     public function index(): View
     {
+        $barang = Barang::all();
+        return view('dasboard.index')->with('barang',  $barang);
+    }
+    public function karyawan(): View
+    {
         $karyawan = DB::table('karyawan')->leftJoin('users', 'karyawan.user_id', '=', 'users.id')->get();
         return view('dasboard.karyawan')->with('karyawan', $karyawan);
     }
