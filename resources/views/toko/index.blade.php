@@ -40,14 +40,14 @@
       </div>
       <div class="row mb-0">
         @foreach ($b as $a)
-        <div class="col-6 d-flex flex-row justify-content-center" style="height: fit-content;">
+        <div class="col-6 d-flex flex-row text-center justify-content-center">
           <figure class="figure">
             <div class="figure-img">
-              <img src="{{ asset('img/featured/1.png') }}" class="figure-img img-fluid m-0">
+              <img src="{{ $a->gambar }}" height="320px" class="figure-imgm-0">
             </div>
             <a class="figure-caption text-center btn" href="">
-              <h5>{{ $a->nama_barang }}</h5>
-              <p>{{ $a->harga }}</p>
+              <h4>{{ $a->nama_barang }}</h4>
+              <h4>{{ $a->harga }}</h4>
             </a>
           </figure>
         </div>

@@ -19,19 +19,6 @@
     </div>
     <!-- End of Carousel -->
 
-    <!-- Search -->
-    <section class="search-button mb-3">
-        <div class="container">
-            <div class="input-group mb-2">
-                <input class="form-control" type="text" placeholder="ex : Beras, Gula, Minyak, . . .">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Search -->
-
     <!-- Display Category -->
     <section class="display">
         <div class="container">
@@ -167,14 +154,14 @@
             </div>
             <div class="card-deck mb-4">
                 @foreach ($b as $a)
-                <div class="col-6 d-flex flex-row justify-content-center" style="height: fit-content;">
+                <div class="col-6 d-flex flex-row justify-content-center">
                 <figure class="figure">
                     <div class="figure-img">
-                    <img src="{{ asset('img/featured/1.png') }}" class="figure-img img-fluid m-0">
+                    <img src="{{ $a->gambar }}" height="320px" class="figure-img m-0">
                     </div>
                     <a class="figure-caption text-center btn" href="">
-                    <h5>{{ $a->nama_barang }}</h5>
-                    <p>{{ $a->harga }}</p>
+                    <h4>{{ $a->nama_barang }}</h4>
+                    <h4>{{ $a->harga }}</h4>
                     </a>
                 </figure>
                 </div>

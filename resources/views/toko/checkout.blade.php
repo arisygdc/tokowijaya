@@ -1,15 +1,9 @@
 @include('toko.header')
 <!-- shopping cart form -->
 <form>
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <div class="card-header">
-          <h4>Keranjang Belanja</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col">
+  <div class="row text-center">
+    <h1>Keranjang Belanja</h1>
+    <div class="col justify-content-center">
       <div class="card">
         <div class="card-header">
           <h4>Ringkasan</h4>
