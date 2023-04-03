@@ -24,7 +24,7 @@ class Kmeans:
     
     def groupBy(self):
         self.run()
-        topid = self.dataframe.groupby(self.clusterLabel[0])[self.clusterLabel[1]].apply(lambda x: x.value_counts().index[0]).reset_index(name=clusterLabel[1])
+        topid = self.dataframe.groupby(self.clusterLabel[0])[self.clusterLabel[1]].apply(lambda x: x.value_counts().index[0]).reset_index(name=self.clusterLabel[1])
         return topid.values.tolist()
     
     def restokcRecomendation(self):
