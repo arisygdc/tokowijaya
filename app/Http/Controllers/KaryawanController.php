@@ -17,8 +17,9 @@ class KaryawanController extends Controller
     public function index(): View
     {
         $barang = DB::table('restock_pred')
-        ->select('restock_pred.cluster', 'barang.nama_barang', 'barang.stock')
+        ->select('restock_pred.cluster', 'barang.nama_barang', 'barang.stock', 'dt.total')
         ->leftJoin('barang', 'restock_pred.kode_barang', '=', 'barang.id')
+        ->leftJoin(DB::raw('(select kode_barang, count(jumlah) as total from detail_transaksi group by kode_barang) as dt'), 'dt.kode_barang', '=', 'barang.id')
         ->get();
         return view('dasboard.index')->with(['barang' =>  $barang]);
     }
