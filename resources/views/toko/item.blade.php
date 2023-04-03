@@ -13,17 +13,17 @@
   <!-- End of Breadcrumb -->
   <!-- Content -->
   <section class="item pt-3 bg-white shadow-sm mb-5">
-    <div class="container d-flex flex-column">
+    <div class="container d-flex flex-column pb-3">
         <div class="container text-center">
           <h1>{{ $kategori }}</h1>
         </div>
         <!-- tempat ngerepeat -->
         @foreach ($barangs as $barang)
-        <div class="container d-flex flex-row align-items-center justify-content-center">
+        <div class="container d-flex flex-row align-items-center justify-content-center pb-3">
           <div class="d-flex">
-            <img src="{{ asset('img/featured/p2.jpg') }}" height="280px" alt="">
+            <img src="{{$barang->gambar}}" height="280px" alt="">
           </div>
-          <div class="d-flex flex-column text-start">
+          <div class="d-flex flex-column text-start p-3">
             <table>
               <tr>
                 <td><h4>Nama</h4></td>
