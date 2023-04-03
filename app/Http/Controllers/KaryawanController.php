@@ -10,16 +10,27 @@ use App\Models\Transaksi;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class KaryawanController extends Controller
 {
     public function index(): View
     {
-        $barang = Barang::all();
-        return view('dasboard.index')->with('barang',  $barang);
+        $barang = DB::table('restock_pred')
+        ->select('restock_pred.cluster', 'barang.nama_barang', 'barang.stock')
+        ->leftJoin('barang', 'restock_pred.kode_barang', '=', 'barang.id')
+        ->get();
+        return view('dasboard.index')->with(['barang' =>  $barang]);
     }
+
+    public function runPrediction() {
+        DB::table('restock_pred')->delete();
+        $command = escapeshellcmd(base_path().'/background-proccess/restock_pred.py');
+        $output = shell_exec($command);
+        echo $output;
+        return redirect()->intended('/karyawan');
+    }
+
     public function karyawan(): View
     {
         $karyawan = DB::table('karyawan')->leftJoin('users', 'karyawan.user_id', '=', 'users.id')->get();
