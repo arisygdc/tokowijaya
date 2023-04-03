@@ -11,7 +11,7 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Stock Saat ini</th>
-                            <th>Rekomendasi Untuk Dibeli</th>
+                            <th>Rekomendasi stock</th>
                         </tr>
                         @php
                             $i = 0;

@@ -28,7 +28,7 @@ class KaryawanController extends Controller
         $command = escapeshellcmd(base_path().'/background-proccess/restock_pred.py');
         $output = shell_exec($command);
         echo $output;
-        return redirect()->intended('/karyawan');
+        return redirect()->intended('/index');
     }
 
     public function karyawan(): View
