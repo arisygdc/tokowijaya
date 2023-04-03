@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('jenis_barang');
             $table->integer('harga');
+            $table->string('gambar');
         });
     }
 
