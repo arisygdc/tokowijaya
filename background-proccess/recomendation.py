@@ -2,12 +2,13 @@ from sklearn.cluster import KMeans
 import time
 import pandas as pd
 import numpy as np
-from mysql_conn import *
+from mysql_conn import Querier
 from helper import *
 
 # waktu delay untuk melakukan eksekusi background task
 # satuan detik
 delay_time = 10
+
 
 # eksekusi kmeans
 def km1(clusterLabel, array):
@@ -23,34 +24,36 @@ def km1(clusterLabel, array):
     return topId.values.tolist()
 
 
+# create object querier
+querier = Querier()
 
 while True:
-    # group by pekerjaan
-    pek = getPekerjaan()
-    rekomendasipek = x_merge(penjualanByPekerjaan(), pek)
+    # querier by pekerjaan
+    pek = querier.getPekerjaan()
+    rekomendasipek = x_merge(querier.penjualanByPekerjaan(), pek)
     clusterLabel = ['pekerjaan', 'barang', 'jumlah']
 
     topId = km1(clusterLabel, rekomendasipek)
     for val in topId:
         time.sleep(0.1)
-        if len(getPekerjaanName(name=pek[val[0]])) < 1:
-            insertRekomendasiPekerjaan(group=pek[val[0]], barang=val[1])
+        if len(querier.getPekerjaanName(name=pek[val[0]])) < 1:
+            querier.insertRekomendasiPekerjaan(group=pek[val[0]], barang=val[1])
             continue
-        update("pekerjaan", pek[val[0]], val[1])
+        querier.updateRekomendasi("pekerjaan", pek[val[0]], val[1])
         
 
     time.sleep(delay_time)
 
     # group by usia
-    rekomendasiUs = penjualanByUsia()
+    rekomendasiUs = querier.penjualanByUsia()
     clusterLabel = ['usia', 'barang', 'jumlah']
 
     topId = km1(clusterLabel, rekomendasiUs)
     for val in topId:
         time.sleep(0.1)
-        if len(getUsia(usia=val[0])) < 1:
-            insertRekomendasiUsia(group=val[0], barang=val[1])
+        if len(querier.getUsia(usia=val[0])) < 1:
+            querier.insertRekomendasiUsia(group=val[0], barang=val[1])
             continue
-        update("usia", val[0], val[1])
+        querier.updateRekomendasi("usia", val[0], val[1])
 
     time.sleep(delay_time)
