@@ -19,6 +19,7 @@
                                         <tr>
                                             <th>Kode</th>
                                             <th>Kode Pengguna</th>
+                                            <th>Alamat</th>
                                             <th>Tanggal</th>
                                         </tr>
                                     </thead>
@@ -27,6 +28,7 @@
                                         <tr>
                                             <td><a href="{{ url('/karyawan/transaksi?id='.$val->id) }}">{{ $val->id }}</a></td>
                                             <td>{{ $val->name }}</td>
+                                            <td>{{ $val->alamat }}</td>
                                             <td>{{ $val->tanggal }}</td>
                                         </tr>
                                         @endforeach

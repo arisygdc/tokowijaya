@@ -45,6 +45,7 @@
             <a class="nav-link" href="{{ url('/category') }}">KATEGORI</a>
           </li>
         </ul>
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
         <a href="{{ url('/keranjang') }}">
           <img src="{{ asset('img/cart.png') }}" width="24" height="24" style="margin-left: 2rem;">
         </a>
