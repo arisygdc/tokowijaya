@@ -44,24 +44,24 @@
   <h1>Alamat Pengiriman</h1>
   <form action="{{ url('/checkout') }}" method="post">
     @csrf
-    <div class="row mb-3">
+    <!-- <div class="row mb-3">
       <label for="inputName" class="col-sm-2 col-form-label">Nama Lengkap</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="inputName" placeholder="Masukkan nama lengkap Anda">
       </div>
-    </div>
+    </div> -->
     <div class="row mb-3">
       <label for="inputAddress" class="col-sm-2 col-form-label">Alamat</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan alamat lengkap Anda" name="alamat">
       </div>
     </div>
-    <div class="row mb-3">
+    <!-- <div class="row mb-3">
       <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Nomor Telepon</label>
       <div class="col-sm-10">
         <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="Masukkan nomor telepon Anda">
       </div>
-    </div>
+    </div> -->
     <div class="row mb-3">
       <div class="col-sm-10 offset-sm-2">
       <button type="submit" class="btn btn-primary btn-block">Checkout</button>
