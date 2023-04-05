@@ -13,44 +13,51 @@ use Illuminate\Support\Facades\DB;
 
 class TokoController extends Controller
 {
-    public function index(): View
+    private function isLevelPengguna()
     {
-        $b = Barang::limit(2)->get();
 
-        if (is_null(Auth::user())) {
-            return view('toko.index', ['b' => $b]);            
+        if(is_null(Auth::user())) {
+            return false;
         }
 
-        $pengguna = Pengguna::where('kode_pengguna', Auth::user()->id)->first();
-        $first = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
-        ->where('pekerjaan', $pengguna->pekerjaan)
-        ->first();
-        $d = explode('-', $pengguna->tgl_lahir);
-        $c = (int)date("Y") - (int)$d[0];
-        $last = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
-        ->where('usia', $c)
-        ->first();
-        return view('toko.index', ['b' => [$first, $last]]);
+        if(Auth::user()->level == 'Pengguna') {
+            return true;
+        }
+
+        return false;
+    }
+    public function index(): View
+    {
+        if (!$this->isLevelPengguna()) {
+            $b = Barang::limit(2)->get();
+            return view('toko.index', ['b' => $b]);
+        }
+
+        $pengguna = Pengguna::select(DB::raw('YEAR(now()) - YEAR(tgl_lahir) as old'), 'pekerjaan')->where('kode_pengguna', Auth::user()->id)->first();
+
+        $b = $this->getRecomendation($pengguna->pekerjaan, $pengguna->old);
+        return view('toko.index', ['b' => $b]);
+    }
+
+    private function getRecomendation(string $pekerjaan, string $usia): array
+    {
+        $b = DB::table('barang')
+        ->where('id' , '=', DB::raw("(select kode_barang from recomendation where pekerjaan = '$pekerjaan')"))
+        ->orWhere('id', '=', DB::raw("(select kode_barang from recomendation where usia = $usia)"))
+        ->get();
+        return [$b[0], $b[1]];
     }
 
     public function category_page(): View
     {
-        $b = Barang::limit(2)->get();
-
-        if (is_null(Auth::user())) {
-            return view('toko.category', ['b' => $b]);            
+        if (!$this->isLevelPengguna()) {
+            $b = Barang::limit(2)->get();
+            return view('toko.category', ['b' => $b]);
         }
 
-        $pengguna = Pengguna::where('kode_pengguna', Auth::user()->id)->first();
-        $first = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
-        ->where('pekerjaan', $pengguna->pekerjaan)
-        ->first();
-        $d = explode('-', $pengguna->tgl_lahir);
-        $c = (int)date("Y") - (int)$d[0];
-        $last = DB::table('recomendation')->select('barang.*')->leftJoin('barang', 'recomendation.kode_barang', '=', 'barang.id')
-        ->where('usia', $c)
-        ->first();
-        return view('toko.category', ['b' => [$first, $last]]);
+        $pengguna = Pengguna::select(DB::raw('YEAR(now()) - YEAR(tgl_lahir) as old'), 'pekerjaan')->where('kode_pengguna', Auth::user()->id)->first();
+        $b = $this->getRecomendation($pengguna->pekerjaan, $pengguna->old);
+        return view('toko.category', ['b' => $b]);
     }
 
     public function category_items(Request $request, string $category): View
@@ -60,7 +67,7 @@ class TokoController extends Controller
     }
 
     public function keranjang_index(): View {
-        if (is_null(Auth::user())) {
+        if (!$this->isLevelPengguna()) {
             abort(403);
         }
 
@@ -80,7 +87,7 @@ class TokoController extends Controller
     }
 
     public function keranjang(Request $request) {
-        if (is_null(Auth::user())) {
+        if (!$this->isLevelPengguna()) {
             abort(403);
         }
 
@@ -105,7 +112,7 @@ class TokoController extends Controller
     }
 
     public function checkout(Request $request) {
-        if (is_null(Auth::user())) {
+        if (!$this->isLevelPengguna()) {
             abort(403);
         }
 
