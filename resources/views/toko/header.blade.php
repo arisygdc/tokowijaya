@@ -45,14 +45,16 @@
             <a class="nav-link" href="{{ url('/category') }}">KATEGORI</a>
           </li>
         </ul>
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
+        @if (auth()->check())
+        @if (auth()->user()->level == 'Pengguna')
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
         <a href="{{ url('/keranjang') }}">
           <img src="{{ asset('img/cart.png') }}" width="24" height="24" style="margin-left: 2rem;">
         </a>
-        @if (!auth()->check())
-        <a href="{{url('/login')}}">
-        @else
+        @endif
         <a href="{{url('/logout')}}">
+        @else
+        <a href="{{url('/login')}}">
         @endif
             <img height="24" src="https://img.icons8.com/ios-filled/50/FFFFFF/login-rounded-right.png"/>
         </a>
