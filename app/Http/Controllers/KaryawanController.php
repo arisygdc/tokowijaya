@@ -60,7 +60,7 @@ class KaryawanController extends Controller
             return view('dasboard.detail_transaksi')->with(['transaksi_id' => $request->get('id'), 'detail_transaksi' => $dt]);
         }
 
-        $transaksi = Transaksi::select('transaksi.id', 'users.name', 'transaksi.tanggal')
+        $transaksi = Transaksi::select('transaksi.id', 'users.name', 'transaksi.alamat','transaksi.tanggal')
         ->where('status', 1)
         ->leftJoin('users', 'transaksi.kode_pengguna', '=', 'users.id')
         ->get();
@@ -146,12 +146,12 @@ class KaryawanController extends Controller
         $users_param->telephone = $request->telephone;
         $users_param->password = bcrypt($request->password);
 
-        
+
         if (!$users_param->save()) {
             DB::rollBack();
             return back()->withErrors(['msg' => 'sepertinya terjadi masalah']);
         }
-        
+
         $peng_param = new Pengguna();
         $peng_param->kode_pengguna = $users_param->id;
         $peng_param->tgl_lahir = $request->tgl_lahir;
