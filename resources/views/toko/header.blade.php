@@ -46,18 +46,18 @@
           </li>
         </ul>
         @if (auth()->check())
-        @if (auth()->user()->level == 'Pengguna')
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
-        <a href="{{ url('/keranjang') }}">
-          <img src="{{ asset('img/cart.png') }}" width="24" height="24" style="margin-left: 2rem;">
-        </a>
-        @endif
-        <a href="{{url('/logout')}}">
+            @if (auth()->user()->level == 'Pengguna')
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="color:white;">{{ auth()->user()->name }}</span>
+            <a href="{{ url('/keranjang') }}">
+                <img src="{{ asset('img/cart.png') }}" width="24" height="24" style="margin-left: 2rem;">
+            </a>
+            <a href="{{url('/logout')}}"> <img height="24" src="https://img.icons8.com/ios-filled/50/FFFFFF/login-rounded-right.png"/> </a>
+            @else
+            <a href="{{url('/login')}}"> <img height="24" src="https://img.icons8.com/ios-filled/50/FFFFFF/login-rounded-right.png"/> </a>
+            @endif
         @else
-        <a href="{{url('/login')}}">
+        <a href="{{url('/login')}}"> <img height="24" src="https://img.icons8.com/ios-filled/50/FFFFFF/login-rounded-right.png"/> </a>
         @endif
-            <img height="24" src="https://img.icons8.com/ios-filled/50/FFFFFF/login-rounded-right.png"/>
-        </a>
       </div>
     </div>
   </nav>
