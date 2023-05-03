@@ -25,6 +25,24 @@ class Querier:
         cursor.close()
         return pek
     
+    def getRecomendationPekerjaan(self):
+        cursor = self.execute("SELECT pekerjaan, nama_barang FROM recomendation, barang WHERE recomendation.kode_barang = barang.id AND pekerjaan IS NOT NULL")
+        rec_pek = cursor.fetchall()
+        cursor.close()
+        return rec_pek
+    
+    def getRecomendationUsia(self):
+        cursor = self.execute("SELECT usia, nama_barang FROM recomendation, barang WHERE recomendation.kode_barang = barang.id AND usia IS NOT NULL")
+        rec_us = cursor.fetchall()
+        cursor.close()
+        return rec_us
+    
+    def getRestockPred(self):
+        cursor = self.execute("SELECT cluster, nama_barang FROM restock_pred, barang WHERE restock_pred.kode_barang = barang.id")
+        restock = cursor.fetchall()
+        cursor.close()
+        return restock
+    
     def getPekerjaanName(self, name):
         cursor = self.execute(f"select * from recomendation where pekerjaan = '{name}'")
         pek = cursor.fetchall()

@@ -23,7 +23,11 @@ while True:
             querier.insertRekomendasiPekerjaan(group=pek[val[0]], barang=val[1])
             continue
         querier.updateRekomendasi("pekerjaan", pek[val[0]], val[1])
-        
+    
+    time.sleep(0.5)
+    
+    print("\nRecommendation by pekerjaan")
+    print(querier.getRecomendationPekerjaan())
 
     time.sleep(delay_time)
 
@@ -39,6 +43,10 @@ while True:
             querier.insertRekomendasiUsia(group=val[0], barang=val[1])
             continue
         querier.updateRekomendasi("usia", val[0], val[1])
+
+    time.sleep(0.5)
+    print("\nRecommendation by usia")
+    print(querier.getRecomendationUsia())
 
     time.sleep(delay_time)
 

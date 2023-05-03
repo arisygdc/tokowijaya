@@ -14,3 +14,7 @@ kmeans = Kmeans(clusterLabel, predData)
 stockers = kmeans.restokcRecomendation()
 for k, v in stockers.items():
     querier.insertRekomendasiRestock(k, v)
+
+print("\nRestock prediction")
+print(querier.getRestockPred())
+print("---------------------------------\n")
