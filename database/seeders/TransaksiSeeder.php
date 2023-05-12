@@ -19,8 +19,8 @@ class TransaksiSeeder extends Seeder
         $usrLen = $user->count()-1;
         $barang = Barang::all();
         $barangLen = $barang->count()-1;
-        $tgl = ['2023-03-01', '2023-03-02', '2023-03-03'];
-        for ($i=0; $i < 3; $i++) {
+        $tgl = ['2022-12-01', '2022-12-02', '2022-12-03', '2022-12-04', '2022-12-05', '2022-12-06', '2022-12-07'];
+        for ($i=0; $i < sizeof($tgl); $i++) {
             for ($f=0; $f < rand(30, 50); $f++) {
                 $ker = new Transaksi;
                 $ker->kode_pengguna = $user[rand(0, $usrLen)]->id;
@@ -30,14 +30,20 @@ class TransaksiSeeder extends Seeder
                 $ker->save();
 
                 for ($g=0; $g < rand(1, 10); $g++) {
+                    $barangPilihan = rand(0, $barangLen);
+                    $jumlahDibeli = rand(1, 10);
                     $deTr = new DetTransaksi;
+                    if ($barang[$barangPilihan]->stock < $jumlahDibeli) {
+                        $deTr->jumlah = $jumlahDibeli;
+                    } else {
+                        $g-=1;
+                        continue;
+                    }
                     $deTr->kode_transaksi = $ker->id;
-                    $deTr->kode_barang = $barang[rand(0, $barangLen)]->id;
-                    $deTr->jumlah = rand(1, 10);
+                    $deTr->kode_barang = $barang[$barangPilihan]->id;
                     $deTr->save();
                 }
             }
         }
-
     }
 }
